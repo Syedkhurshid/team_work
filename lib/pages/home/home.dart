@@ -4,16 +4,13 @@ import 'package:team_work/pages/Property/Addproperty.dart';
 import 'package:team_work/pages/auth/register.dart';
 import 'package:team_work/pages/home/widget/city.dart';
 import 'package:team_work/pages/home/widget/projects.dart';
-
 import 'package:team_work/widgets/Drawer.dart';
 import 'package:team_work/widgets/best_offer.dart';
 import 'package:team_work/widgets/propertyType.dart';
 import 'package:team_work/widgets/recommended_house.dart';
 import 'package:team_work/widgets/search_input.dart';
-
 import 'package:flutter_svg/svg.dart';
 import 'package:team_work/widgets/welcome_text.dart';
-
 import '../../models/database.dart';
 import '../../widgets/custom_bottom_navigation_bar.dart';
 import '../auth/users.dart';
@@ -26,9 +23,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var dbclass = context.read<DataBase>();
-
     dbclass.getUsername();
-
     Future<dynamic> makme() async {
       String usern = await dbclass.getUsername();
       if (usern == 'hassan') {
@@ -39,7 +34,6 @@ class HomePage extends StatelessWidget {
     }
 
     makme();
-
     return Scaffold(
         resizeToAvoidBottomInset: false,
         key: _scaffoldKey,
@@ -82,7 +76,7 @@ class HomePage extends StatelessWidget {
         drawer: const Mydrawer(),
         body: SingleChildScrollView(
           child: Column(
-            children: const [
+            children: [
               WelcomeText(),
               // SearchInput(),
               PropertyType(),
