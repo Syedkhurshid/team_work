@@ -166,9 +166,10 @@ class Login extends StatelessWidget {
                           //shared prefs !!!
 
                           print('True');
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (BuildContext context) =>
-                                  const users()));
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      const users()));
                         } else if (message.isNotEmpty && message == 'False') {
                           print('False');
                           await showDialog(
@@ -205,7 +206,7 @@ class Login extends StatelessWidget {
                     ),
                     onPressed: () {
                       //signup screen
-                      Navigator.of(context).push(MaterialPageRoute(
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
                           builder: (BuildContext context) => const Register()));
                     },
                   )
